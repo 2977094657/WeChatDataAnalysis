@@ -349,7 +349,8 @@ async def decrypt_databases(request: DecryptRequest):
             "output_directory": results["output_directory"],
             "message": results["message"],
             "processed_files": results["processed_files"],
-            "failed_files": results["failed_files"]
+            "failed_files": results["failed_files"],
+            "account_results": results.get("account_results", {})
         }
 
     except Exception as e:
