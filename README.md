@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="logo.png" alt="微信数据库解密工具" width="200">
+  <img src="frontend/public/logo.png" alt="微信数据库解密工具" width="200">
 </div>
 
 # 微信数据库解密工具
@@ -61,6 +61,22 @@ npm run dev
 - 前端界面: http://localhost:3000
 - API服务: http://localhost:8000
 - API文档: http://localhost:8000/docs
+
+## 界面预览
+
+### 检测页面
+<div align="center">
+  <img src="检测.jpg" alt="微信检测页面" width="800">
+</div>
+
+自动检测微信安装路径和数据库文件位置，支持多账户识别。
+
+### 解密页面
+<div align="center">
+  <img src="解密.jpg" alt="数据库解密页面" width="800">
+</div>
+
+输入解密密钥，选择数据库文件进行批量解密操作。
 
 ## 使用指南
 
