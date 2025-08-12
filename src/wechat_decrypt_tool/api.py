@@ -273,12 +273,12 @@ async def root():
 
 
 @app.get("/api/wechat-detection", summary="详细检测微信安装信息")
-async def detect_wechat_detailed():
+async def detect_wechat_detailed(data_root_path: Optional[str] = None):
     """详细检测微信安装信息，包括版本、路径、消息目录等。"""
     logger.info("开始执行微信检测")
     try:
         from .wechat_detection import detect_wechat_installation
-        info = detect_wechat_installation()
+        info = detect_wechat_installation(data_root_path=data_root_path)
 
         # 添加一些统计信息
         stats = {
