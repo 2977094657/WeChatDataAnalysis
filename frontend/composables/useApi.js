@@ -27,8 +27,23 @@ export const useApi = () => {
   }
   
   // 微信检测API
-  const detectWechat = async () => {
-    return await request('/wechat-detection')
+  const detectWechat = async (params = {}) => {
+    const query = new URLSearchParams()
+    if (params && params.data_root_path) {
+      query.set('data_root_path', params.data_root_path)
+    }
+    const url = '/wechat-detection' + (query.toString() ? `?${query.toString()}` : '')
+    return await request(url)
+  }
+  
+  // 检测当前登录账号API
+  const detectCurrentAccount = async (params = {}) => {
+    const query = new URLSearchParams()
+    if (params && params.data_root_path) {
+      query.set('data_root_path', params.data_root_path)
+    }
+    const url = '/current-account' + (query.toString() ? `?${query.toString()}` : '')
+    return await request(url)
   }
   
   // 数据库解密API
@@ -46,6 +61,7 @@ export const useApi = () => {
   
   return {
     detectWechat,
+    detectCurrentAccount,
     decryptDatabase,
     healthCheck
   }
